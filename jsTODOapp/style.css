@@ -24,19 +24,19 @@ header {
     color: white;
 }
 
-.tasklist_text {
+.tasklist {
     font-size: 3em;
     font-weight: 900;
     color: blue;
 }
 
-.additem_text {
+.additem {
     font-size: 34px;
     font-weight: 900;
     cursor: pointer;
 }
 
-.popup_title {
+.poptitle {
     font-size: xx-large;
     margin-top: 40px;
     font-weight: 900;
@@ -100,13 +100,13 @@ header {
 
 }
 
-.buttons_inline {
+.buttons {
     margin-top: 22px;
     display: flex;
     justify-content: space-evenly;
 }
 
-.button_Add, .off {
+.addbtn, .end {
     color: white;
     font-size: larger;
     font-weight: 200;
@@ -162,6 +162,7 @@ header {
     text-align: center;
     font-weight: 100;
     color: white;
+    cursor: pointer;
 }
 
 .line {
@@ -188,16 +189,19 @@ header {
 .plus_icon {
     margin-right: 10px;
     height: 26px;
+    width: 26px;
+    text-align: center;
     font-size: x-large;
-    background-color: rgb(150, 103, 193);
-    border: 8px solid rgb(150, 103, 193);
+    background-color: white;
+    border: 8px solid white;
 }
 
 .del_icon {
     height: 22px;
     font-size: larger;
-    background-color: rgba(255, 0, 0, 0.453);
-    border: 11px solid rgba(255, 0, 0, 0.432);
+    background-color: white;
+    border: 11px solid white;
+
 }
 
 div.taskBox{
@@ -211,7 +215,8 @@ div.taskBox{
   
   input[type="checkbox"]:before {
     content:"Mark Done";
-    background-color: rgb(150, 103, 193);
+    padding-top: 3%;
+    background-color: rgb(0, 0, 0);
   }
   
   input[type="checkbox"]{
@@ -222,7 +227,8 @@ div.taskBox{
     color: #fff;
     height: 1.75em;
     width:  6.15em;
-    background-color: rgb(150, 103, 193);
+    padding-top: 4%;
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
   }
   
@@ -239,5 +245,28 @@ div.taskBox{
   input[type="checkbox"]:checked+label{
     text-decoration:line-through;
     font-size: medium;
-    color: rgb(198, 10, 10);
+    color: rgb(255, 255, 255);
   }
+
+  
+.backbutton {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    font-size: xx-large;
+    font-weight: 100;
+    cursor: pointer;
+
+}
+
+.back {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
