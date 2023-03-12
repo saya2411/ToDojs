@@ -7,18 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>ToDo</title>
+    <title>myToDo</title>
 </head>
 
 <body>
     <div class="maincontainer" id="maincontainer">
-        <Header>
-            <p class="tasklist_text">Task <span class="list">List</p>
+        <header>
+                <div class="backbutton" style="display: none;">
+                <div class="back">
+                   <img src="./icons8-go-back-50.png" alt="goback">
+                </div>
+                <span>Back</span>
+            </div>
+
+            <p class="tasklist">Task <span class="list">List</p>
             <div id="createList" class="createList">
                 <i class="fa-solid fa-plus icon1"></i>
-                <p class="additem_text">Add Item</p>
+                <p class="additem">Add Item</p>
             </div>
-        </Header>
+        </header>
        
         <div class="opacity"></div>
 
@@ -30,23 +37,23 @@
 
 
     <div class="listForm popup" style="display: none;">
-        <p class="popup_title">Add New List</p>
+        <p class="poptitle">Add New List</p>
         <form action="">
             <input type="text" id="listName" class="listName inputName" placeholder="Type List Title Here">
-            <div class="buttons_inline">
-                <button class="addList button_Add" id="addList" type="button">Add</button>
-                <button class="close off" id="close" type="button">Close</button>
+            <div class="buttons">
+                <button class="addList addbtn" id="addList" type="button">Add</button>
+                <button class="close end" id="close" type="button">Close</button>
             </div>
         </form>
     </div>
 
     <div class="itemForm popup" style="display: none;">
-        <p class="popup_title">Add New Item</p>
+        <p class="poptitle">Add New Task</p>
         <form action="">
             <input type="text" id="itemName" class="itemName inputName" placeholder="Type List Item Here">
-            <div class="buttons_inline">
-                <button class="addTask button_Add" id="addTask" type="button">Add</button>
-                <button class="exit off" id="closeTask" type="button">Close</button>
+            <div class="buttons">
+                <button class="addTask addbtn" id="addTask" type="button">Add</button>
+                <button class="exit end" id="closeTask" type="button">Close</button>
             </div>
         </form>
     </div>
