@@ -49,14 +49,38 @@ function createCard() {
     let plus_icon = document.createElement("i");
     plus_icon.className = "fa-solid fa-plus plus_icon";
     plus_icon.style.cursor="pointer";
+    plus_icon.style.color="black";
+    
 
-    plus_icon.addEventListener("click", function(){
+
+
+    plus_icon.addEventListener("click", function showt(){
         showtasks(items)
     }); 
     
+    title.addEventListener("click", function () {
+
+        let header = document.getElementsByTagName("header")[0];
+        header.firstElementChild.style.display = "none";
+
+        document.querySelector(".backbutton").style.display = "flex";
+        document.querySelector(".tasklist").innerHTML = this.innerText;
+        let listsss = document.querySelector("#lists");
+        listsss.setAttribute("style", "justify-content:center;");
+
+        let tempArray = [];
+        for (let i = 0; i < cards.length; i++) {
+            if (cards[i] === list)
+                tempArray.push(cards[i]);
+        }
+        display(tempArray);
+    });
+
     let del_icon = document.createElement("i");
     del_icon.className = "fa fa-trash del_icon";
     del_icon.style.cursor="pointer";
+    del_icon.style.color="black";
+
 
     let icons = document.createElement("div");
     icons.className = "icons";
@@ -87,7 +111,7 @@ function createCard() {
     cards.push(list);
     display(cards);
 
-
+}
     function display(n) {
         let lists = document.getElementById("lists");
         lists.innerHTML = "";
@@ -96,7 +120,7 @@ function createCard() {
         }
     }
 
-}
+
 function showtasks(box) {
 
     opacity.style.display = "block";
@@ -126,6 +150,8 @@ function showtasks(box) {
 
         box+=box.appendChild(task_box);
 
+        document.querySelector(".plus_icon").removeEventListener("click", showt);
+
     }
     
     document.getElementById("closeTask").addEventListener('click', closeTasks);
@@ -134,5 +160,21 @@ function showtasks(box) {
         document.querySelector(".itemForm").style.visibility="hidden";
         opacity.style.display = "none";
         console.log("close button is pressed");
+        document.querySelector(".plus_icon").removeEventListener("click", showt);
     }
 }
+
+document.querySelector(".backbutton").addEventListener("click", goback) 
+    function goback(){
+    console.log("Back button is pressed");
+    let header = document.getElementsByTagName("header")[0];
+    header.firstElementChild.style.display = "flex";
+
+    document.querySelector(".backbutton").style.display = "none";
+    document.querySelector(".tasklist").innerHTML = `Task <span class="list">List`;
+    let listsss = document.querySelector("#lists");
+    listsss.setAttribute("style", "justify-content:space-between;");
+
+    display(cards);
+}
+
