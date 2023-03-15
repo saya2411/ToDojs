@@ -10,8 +10,9 @@ let opacity = document.querySelector(".opacity");
 
 function createList() {
     console.log("List created");
-    
+
     opacity.style.display = "block";
+    
     let maincontainer_height = document.getElementById("maincontainer");
     opacity.style.height = `${maincontainer_height.offsetHeight + 100}px`;
 
@@ -50,9 +51,6 @@ function createCard() {
     plus_icon.className = "fa-solid fa-plus plus_icon";
     plus_icon.style.cursor="pointer";
     plus_icon.style.color="black";
-    
-
-
 
     plus_icon.addEventListener("click", function showt(){
         showtasks(items)
@@ -74,6 +72,7 @@ function createCard() {
                 tempArray.push(cards[i]);
         }
         display(tempArray);
+        
     });
 
     let del_icon = document.createElement("i");
@@ -130,8 +129,10 @@ function showtasks(box) {
     opacity.style.height = `${maincontainer_height.offsetHeight + 100}px`;
 
     document.getElementsByClassName("itemForm")[0].style.display = "flex";
-   
+
     document.getElementById("addTask").addEventListener('click', AddTasks);
+    
+
 
     function AddTasks() {
         document.getElementsByClassName("itemForm")[0].style.display = "none";
@@ -148,19 +149,20 @@ function showtasks(box) {
         task_box.className = "taskBox";
         task_box.append(input, label);
 
-        box+=box.appendChild(task_box);
+        box.appendChild(task_box);
 
-        document.querySelector(".plus_icon").removeEventListener("click", showt);
+        document.getElementById("addTask").removeEventListener('click', AddTasks);
 
     }
+      
     
     document.getElementById("closeTask").addEventListener('click', closeTasks);
 
     function closeTasks() {
-        document.querySelector(".itemForm").style.visibility="hidden";
+        document.getElementsByClassName("itemForm")[0].style.display = "none";
         opacity.style.display = "none";
         console.log("close button is pressed");
-        document.querySelector(".plus_icon").removeEventListener("click", showt);
+        document.getElementById("addTask").removeEventListener('click', AddTasks);
     }
 }
 
